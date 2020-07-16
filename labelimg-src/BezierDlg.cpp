@@ -721,7 +721,7 @@ void CBezierDlg::OnBnClickedBtnSave()
 		locations << m_srcImg.rows << " " << m_srcImg.cols << " ";
 
 		locations << int(m_beye1) << " " << m_points[0].x << " " << m_points[0].y << " ";
-		locations << int(m_beye2) << " " << m_points[1].x << " " << m_points[1].y;
+		locations << int(m_beye2) << " " << m_points[1].x << " " << m_points[1].y << "\n";
 
 		//locations << "}" << "\n";
 
