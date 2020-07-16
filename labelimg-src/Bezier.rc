@@ -13,7 +13,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// 中文(简体) resources
+// Chinese (Simplified) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
 LANGUAGE LANG_CHINESE, SUBLANG_NEUTRAL
@@ -31,10 +31,12 @@ CAPTION "关键点编辑器"
 FONT 8, "Microsoft Sans Serif", 400, 0, 0x0
 BEGIN
     PUSHBUTTON      "导入图片",IDC_BUTTON_IN,838,4,37,25
-    LISTBOX         IDC_LIST1,771,32,103,412,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_LIST1,772,37,103,412,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
     PUSHBUTTON      "文件夹",IDC_BTN_FOLDER,797,5,37,25
     PUSHBUTTON      "删除当前",IDC_BTN_DEL,819,447,50,24
-    CONTROL         "人脸",IDC_CHECKFACE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,764,7,28,19
+    CONTROL         "人脸",IDC_CHECKFACE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,766,8,28,19
+    CONTROL         "眼1",IDC_EYE1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,750,36,28,19
+    CONTROL         "眼2",IDC_EYE2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,750,54,28,19
 END
 
 
@@ -64,12 +66,12 @@ BEGIN
     0
 END
 
-#endif    // 中文(简体) resources
+#endif    // Chinese (Simplified) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// 中文(简体，中国) resources
+// Chinese (Simplified, PRC) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
 LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
@@ -181,12 +183,12 @@ END
 // remains consistent on all systems.
 IDR_MAINFRAME           ICON                    "res\\Bezier.ico"
 
-#endif    // 中文(简体，中国) resources
+#endif    // Chinese (Simplified, PRC) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// 英语(美国) resources
+// English (United States) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
@@ -229,7 +231,7 @@ BEGIN
     END
 END
 
-#endif    // 英语(美国) resources
+#endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

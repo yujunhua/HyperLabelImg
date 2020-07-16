@@ -30,6 +30,8 @@ static char THIS_FILE[] = __FILE__;
 
 CBezierDlg::CBezierDlg(CWnd* pParent /*=NULL*/)
 	: CDialog(CBezierDlg::IDD, pParent)
+	, m_beye1(TRUE)
+	, m_beye2(TRUE)
 {
 	mBInited = false;
 
@@ -64,6 +66,8 @@ void CBezierDlg::DoDataExchange(CDataExchange* pDX)
 	//}}AFX_DATA_MAP
 
 	DDX_Control(pDX, IDC_LIST1, mListBox);
+	DDX_Check(pDX, IDC_EYE1, m_beye1);
+	DDX_Check(pDX, IDC_EYE2, m_beye2);
 }
 
 BEGIN_MESSAGE_MAP(CBezierDlg, CDialog)
@@ -106,10 +110,10 @@ BOOL CBezierDlg::OnInitDialog()
 
 
 	//关键点，仅仅就是一个
-	m_points.push_back(cv::Point(500, 500));
-	m_points.push_back(cv::Point(750, 500));
-	m_points.push_back(cv::Point(750, 550));
-	m_points.push_back(cv::Point(500, 550));
+	//m_points.push_back(cv::Point(500, 500));
+	//m_points.push_back(cv::Point(750, 500));
+	//m_points.push_back(cv::Point(750, 550));
+	//m_points.push_back(cv::Point(500, 550));
 
 
 	CLM_DoInit();
@@ -596,16 +600,16 @@ void CBezierDlg::DoGetPtsAndDraw(CString fileName)
 	mNowPt.y = 0;
 
 
-	m_points.resize(4);
+	m_points.resize(2);
 	//默认值是 4个角点
-	m_points[0].x = 10;
-	m_points[0].y = 10;
-	m_points[1].x = 200;
-	m_points[1].y = 10;
-	m_points[2].x = 200;
-	m_points[2].y = 200;
-	m_points[3].x = 10;
-	m_points[3].y = 200;
+	m_points[0].x = 300;
+	m_points[0].y = 700;
+	m_points[1].x = 400;
+	m_points[1].y = 450;
+	//m_points[2].x = 200;
+	//m_points[2].y = 200;
+	//m_points[3].x = 10;
+	//m_points[3].y = 200;
 
 
 	m_nowMultiShow = 1.0;
@@ -710,13 +714,15 @@ void CBezierDlg::OnBnClickedBtnImport()
 void CBezierDlg::OnBnClickedBtnSave()
 {
 
+		UpdateData(TRUE);
 		char szBuf[256];
 		sprintf(szBuf, "%s", m_ptsName.GetBuffer(0));
 		fstream locations(m_ptsName.GetBuffer(0), ios_base::out);
-		for (int i = 0; i < m_points.size(); i++)
-		{
-			locations << m_points[i].x << " " << m_points[i].y << "\n";
-		}
+		locations << m_srcImg.rows << " " << m_srcImg.cols << " ";
+
+		locations << int(m_beye1) << " " << m_points[0].x << " " << m_points[0].y << " ";
+		locations << int(m_beye2) << " " << m_points[1].x << " " << m_points[1].y;
+
 		//locations << "}" << "\n";
 
 

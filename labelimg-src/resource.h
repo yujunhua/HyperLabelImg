@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ 生成的包含文件。
-// 供 Bezier.rc 使用
+// Microsoft Visual C++ generated include file.
+// Used by Bezier.rc
 //
 #define IDD_BEZIER_DIALOG               102
 #define IDR_MAINFRAME                   128
@@ -37,6 +37,9 @@
 #define IDC_LIST1                       1026
 #define IDC_CHECK1                      1027
 #define IDC_CHECKFACE                   1027
+#define IDC_EYE1                        1028
+#define IDC_CHECKFACE3                  1029
+#define IDC_EYE2                        1029
 
 // Next default values for new objects
 // 

@@ -43,6 +43,10 @@ public:
 	//}}AFX_VIRTUAL
 	void ShowMax();
 // Implementation
+
+public:
+	BOOL m_beye1;
+	BOOL m_beye2;
 private:
 
 	CPaintDC * pDC;
@@ -107,6 +111,7 @@ public:
 	afx_msg void OnBnClickedBtnDel();
 	afx_msg BOOL OnMouseWheel(UINT nFlags, short zDelta, CPoint pt);
 	afx_msg void OnSize(UINT nType, int cx, int cy);
+
 };
 
 //{{AFX_INSERT_LOCATION}}
